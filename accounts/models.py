@@ -2,16 +2,17 @@ import string
 import secrets
 
 from django.db import models
-
-def create_password():
-    choices = string.ascii_letters + string.digits
-    return ''.join(secrets.choice(choices) for character in range(12))
+from django.contrib.auth.hashers import make_password
 
 class User(models.Model):
     email_address = models.EmailField(blank=True)
-    password = models.CharField(max_length=255, default=create_password)
+    password = models.CharField(max_length=255, default="test")
     creation_date = models.DateTimeField(auto_now_add=True)
     last_active_date = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        self.password = make_password(self.password)
+        super(User, self).save(*args, **kwargs)
 
     @property
     def username(self):
