@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv("ANONYMOUS_FORUM_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://anon-forum-christian-medlin.herokuapp.com"]
+ALLOWED_HOSTS = ["anon-forum-christian-medlin.herokuapp.com"]
 
 
 # Application definition
