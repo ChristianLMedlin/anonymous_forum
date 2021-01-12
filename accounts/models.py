@@ -3,7 +3,7 @@ from django.contrib.auth.hashers import make_password
 
 class User(models.Model):
     email_address = models.EmailField(blank=True)
-    password = models.CharField(max_length=255, default="test")
+    password = models.CharField(max_length=255)
     creation_date = models.DateTimeField(auto_now_add=True)
     last_active_date = models.DateTimeField(auto_now=True)
 
