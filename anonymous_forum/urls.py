@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from accounts import views
+from apps.accounts import views
 
 router = routers.DefaultRouter()
 router.register(r'accounts', views.UserViewSet)
