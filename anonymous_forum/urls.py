@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from apps.accounts import views
+from apps.accounts.views import UserViewSet
+from apps.posts.views import PostsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'accounts', views.UserViewSet)
+router.register('accounts', UserViewSet)
+router.register('posts', PostsViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
