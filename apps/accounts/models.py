@@ -15,3 +15,6 @@ class User(models.Model):
     def username(self):
         return f"user{self.id}"
 
+    def __str__(self):
+        return self.username
+
