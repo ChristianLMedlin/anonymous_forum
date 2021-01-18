@@ -19,12 +19,14 @@ from rest_framework import routers
 
 from apps.accounts.views import UserViewSet
 from apps.posts.views import PostsViewSet
+from .views import index
 
 router = routers.DefaultRouter()
 router.register('accounts', UserViewSet)
 router.register('posts', PostsViewSet)
 
 urlpatterns = [
+    path('', index, name='index')
     path('admin/', admin.site.urls),
     path('api/', include(router.urls))
 ]
