@@ -5,22 +5,22 @@ function Posts() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-    fetch("/api/posts")
-    .then(response => response.json())
-    .then(data => setPosts(data))
+        fetch("/api/posts")
+        .then(response => response.json())
+        .then(data => setPosts(data))
     }, []);
 
     return (
-    <div>
-        {posts.map(item => (
-            <article key={item.id}>
-                <h1>{item.title}</h1>
-                <p>{item.user}</p>
-                <p>{item.content}</p>
-                <p>{item.creation_date}</p>
-            </article>
-        ))}
-    </div>
+        <div className="post-summary-container">
+            {posts.map(item => (
+                <article className="post-summary" key={item.id}>
+                    <h1 className="post-title">{item.title}</h1>
+                    <p className="test">{item.author}</p>
+                    <p>{item.content}</p>
+                    <p>{item.creation_date}</p>
+                </article>
+            ))}
+        </div>
     );
 }
  

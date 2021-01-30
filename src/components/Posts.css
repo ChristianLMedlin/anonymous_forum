@@ -6,10 +6,14 @@ body {
     font-family: "Source Sans Pro", sans-serif;
 }
 
-post-summary-container {
-    border-top: 2px green;
+.post-summary-container {
+    border-top: solid 1px #96b4ff;
 }
 
-/* post-summary {
+.post-summary {
+    border-bottom: solid 1px #96b4ff;
+}
 
-} */
+.post-title {
+    color: #96b4ff
+}

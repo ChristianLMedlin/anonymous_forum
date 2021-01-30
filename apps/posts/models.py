@@ -7,7 +7,14 @@ class Posts(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ["creation_date"]
+        ordering = ["-creation_date"]
+
+    @property
+    def author(self):
+        return f"{self.user}"
 
     def __str__(self):
-        return f"{self.title[:10]}.. {self.user}"
+        if len(self.title) < 10:
+            return f"{self.title} {self.username}"
+        else:
+            return f"{self.title[:10]}.. {self.username}"
