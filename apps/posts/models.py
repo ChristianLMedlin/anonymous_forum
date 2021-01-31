@@ -18,3 +18,6 @@ class Posts(models.Model):
             return f"{self.title} {self.username}"
         else:
             return f"{self.title[:10]}.. {self.username}"
+
+    def __str__(self):
+        return f"{self.title[:10]}.. {self.username}"
