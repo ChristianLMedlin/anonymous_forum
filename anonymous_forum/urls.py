@@ -23,7 +23,7 @@ from .views import index
 
 router = routers.DefaultRouter()
 router.register('accounts', UserViewSet)
-router.register('posts', PostsViewSet)
+router.register('posts', PostsViewSet, basename="posts")
 
 urlpatterns = [
     path('', index, name='index'),
